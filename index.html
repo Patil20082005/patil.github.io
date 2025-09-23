@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Health Worker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Welcome Screen -->
+  <section id="welcome" class="screen active">
+    <h1>Welcome to Community Health Worker Portal</h1>
+    <p>Select an option:</p>
+    <div class="options">
+      <button onclick="showScreen('upload')">Upload Water Test</button>
+      <button onclick="showScreen('records')">Check Information</button>
+    </div>
+  </section>
+
+  <!-- Upload Screen -->
+  <section id="upload" class="screen">
+    <h2>Upload Water Test</h2>
+    <form id="uploadForm">
+      <label>Village Name:</label>
+      <input type="text" id="village" required>
+
+      <label>Water Source:</label>
+      <select id="source" required>
+        <option value="">Select</option>
+        <option>Well</option>
+        <option>River</option>
+        <option>Tap</option>
+        <option>Lake</option>
+      </select>
+
+      <label>Litmus Paper Image:</label>
+      <input type="file" id="litmusImage" accept="image/*" required>
+
+      <p>
+        <button type="button" id="getLocation">Capture GPS Location</button>
+      </p>
+      <p id="locationDisplay">GPS not captured</p>
+
+      <button type="submit">Analyze & Save</button>
+    </form>
+  </section>
+
+  <!-- Report Screen -->
+  <section id="report" class="screen">
+    <h2>Water Test Report</h2>
+    <div id="reportContent"></div>
+    <button onclick="showScreen('welcome')">Back to Home</button>
+  </section>
+
+  <!-- Records Screen -->
+  <section id="records" class="screen">
+    <h2>Stored Water Tests</h2>
+    <table id="recordsTable">
+      <thead>
+        <tr>
+          <th>Village</th><th>Source</th><th>GPS</th>
+          <th>Result</th><th>Diseases</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button onclick="showScreen('welcome')">Back to Home</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
