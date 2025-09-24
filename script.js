@@ -30,7 +30,7 @@ document.getElementById('uploadForm').addEventListener('submit', e => {
   formData.append('longitude', lon);
   // if you have an image input: formData.append('image', document.getElementById('yourImageInput').files[0]);
 
-  fetch('https://YOUR-BACKEND-URL.onrender.com/reports', {
+  fetch('https://patil-backend.onrender.com/reports', {
     method: 'POST',
     body: formData
   })
@@ -49,3 +49,4 @@ document.getElementById('uploadForm').addEventListener('submit', e => {
   `;
   showScreen('report');
 });
+
